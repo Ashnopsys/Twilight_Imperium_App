@@ -26,6 +26,7 @@ public class CustomRace extends Race {
     public CustomRace (String name){this.name = name;}
 
     public class FactionAbility{
+        //Use anonymous classes to make abilities
         String factionAbilityName;
         String factionAbilityDescription;
         public FactionAbility(String name, String description){

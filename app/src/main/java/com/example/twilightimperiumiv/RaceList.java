@@ -26,6 +26,7 @@ public class RaceList {
   //  nekro, winnu, yssaril, saar, sol, mentak, sardakk, xxcha};
 
     public ArrayList<Race> getRaceList(){
+        //possibly need to make a separate list or change the list entirely for custom races.
         ArrayList<Race> races = new ArrayList<>();
         races.add(hacan);
         races.add(creuss);
