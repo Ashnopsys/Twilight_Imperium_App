@@ -14,6 +14,8 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+
 public class CreateRace extends AppCompatActivity {
 
     @Override
@@ -39,6 +41,16 @@ public class CreateRace extends AppCompatActivity {
                 LinearLayout abilitiesSV = findViewById(R.id.abilitiesLayout);
                 abilitiesSV.addView(abilityName);
                 abilitiesSV.addView(abilityDescription);
+            }
+        });
+
+        Gson gson = new Gson();
+        String customRaceToString; //need to add sharedprefs before this
+        Button saveButton = findViewById(R.id.saveButton);
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
             }
         });
 

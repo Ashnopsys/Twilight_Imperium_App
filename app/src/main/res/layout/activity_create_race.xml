@@ -7,6 +7,24 @@
     tools:context=".CreateRace"
     android:id="@+id/coordinatorLayout">
 
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="98dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="192dp"
+        android:layout_marginLeft="192dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="44dp"
+        android:text="Save Race"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.584"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
     <EditText
         android:id="@+id/raceName"
         android:layout_width="wrap_content"
