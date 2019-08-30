@@ -18,7 +18,6 @@ import java.io.InputStreamReader;
 
 public class RaceInfo extends AppCompatActivity {
 
-    private TextView textView;
     private StringBuilder text = new StringBuilder();
 
     @Override

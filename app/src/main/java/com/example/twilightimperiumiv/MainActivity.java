@@ -44,6 +44,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        View customRace = findViewById(R.id.custom_race_button);
+        Button customRaceBut = (Button) customRace;
+        customRaceBut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                System.out.println("Click List");
+                Intent intent = new Intent(view.getContext(), CreateRace.class);
+                startActivity(intent);
+            }
+        });
+
 //        int buttonMapID = R.id.randomRaceBut;
 //        View w = findViewById(buttonMapID);
 //        Button mapBut = (Button) w;
