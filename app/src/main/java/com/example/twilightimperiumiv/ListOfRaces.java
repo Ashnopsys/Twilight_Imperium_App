@@ -25,13 +25,13 @@ public class ListOfRaces extends AppCompatActivity {
 
 
         LinearLayout layout = (LinearLayout) findViewById(R.id.linearView);
-        for (i = 0;i < raceList.getRaceList().length; i++) // iterate over array of existing races
+        for (i = 0;i < raceList.getRaceList().size(); i++) // iterate over array of existing races
         {
             // Create the button
             Button button = new Button(this);
             button.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
                     LinearLayout.LayoutParams.WRAP_CONTENT));
-            button.setText(raceList.getRaceList()[i].getName());
+            button.setText(raceList.getRaceList().get(i).getName());
             layout.addView(button); // add to layout
             currentRace = i;
 

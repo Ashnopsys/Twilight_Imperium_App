@@ -55,8 +55,8 @@ public class MainActivity extends AppCompatActivity {
 
     public Race getRandomRace(){
         Random rand = new Random();
-        int number = rand.nextInt(races.getRaceList().length);
-        return races.getRaceList()[number];
+        int number = rand.nextInt(races.getRaceList().size());
+        return races.getRaceList().get(number);
     }
 
 

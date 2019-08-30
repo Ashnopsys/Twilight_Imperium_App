@@ -77,10 +77,10 @@ public class RaceInfo extends AppCompatActivity {
 
     public Race findRaceInList(String raceName) {
         RaceList racelist = new RaceList();
-        for(int i = 0; i < racelist.getRaceList().length; i++) {
-            System.out.println(racelist.getRaceList()[i].getName());
-            if (raceName.equalsIgnoreCase(racelist.getRaceList()[i].getName())){
-                return racelist.getRaceList()[i];
+        for(int i = 0; i < racelist.getRaceList().size(); i++) {
+            System.out.println(racelist.getRaceList().get(i).getName());
+            if (raceName.equalsIgnoreCase(racelist.getRaceList().get(i).getName())){
+                return racelist.getRaceList().get(i);
             }
             else {
                 System.out.println("Couldn't find race! Trying again!");

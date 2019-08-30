@@ -1,9 +1,9 @@
 package com.example.twilightimperiumiv;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class RaceList {
-    public Race[] getRaceList(){
-        return races;
-    }
 
     Race hacan = new Race ("Emirates of Hacan", "hacan", "emirates_of_hacan");
     Race creuss = new Race ("The Ghosts of Creuss", "creuss", "ghosts_of_creuss");
@@ -22,8 +22,30 @@ public class RaceList {
     Race mentak = new Race ("The Mentak Collective", "mentak", "mentak_coalition");
     Race sardakk = new Race ("The Sardakk N'orr", "sardakk", "sardakk_nnoir");
     Race xxcha = new Race ("The Xxcha Kingdom", "xxcha", "xxcha");
-    Race[] races = new Race[] {hacan, creuss, arborec, muaat, naalu, jolnaar, yin, letnev, l1z1x,
-    nekro, winnu, yssaril, saar, sol, mentak, sardakk, xxcha};
+  //  Race[] races = new Race[] {hacan, creuss, arborec, muaat, naalu, jolnaar, yin, letnev, l1z1x,
+  //  nekro, winnu, yssaril, saar, sol, mentak, sardakk, xxcha};
 
+    public ArrayList<Race> getRaceList(){
+        ArrayList<Race> races = new ArrayList<>();
+        races.add(hacan);
+        races.add(creuss);
+        races.add(arborec);
+        races.add(muaat);
+        races.add(naalu);
+        races.add(jolnaar);
+        races.add(yin);
+        races.add(letnev);
+        races.add(l1z1x);
+        races.add(nekro);
+        races.add(winnu);
+        races.add(yssaril);
+        races.add(saar);
+        races.add(sol);
+        races.add(mentak);
+        races.add(sardakk);
+        races.add(xxcha);
+        return races;
+
+    }
 
 }
