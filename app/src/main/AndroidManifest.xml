@@ -12,6 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.NoActionBar">
         <activity
+            android:name=".CreateRace"
+            android:label="@string/title_activity_create_race"
+            android:theme="@style/NoActionBar"></activity>
+        <activity
             android:name=".ListOfRaces"
             android:label="@string/title_activity_list_of_races"
             android:theme="@style/NoActionBar" />

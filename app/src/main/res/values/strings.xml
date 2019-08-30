@@ -94,4 +94,5 @@
     <string name="title_activity_race_info">RaceInfo</string>
     <string name="title_activity_list_of_races">ListOfRaces</string>
     <string name="title_activity_race_info2">RaceInfo2</string>
+    <string name="title_activity_create_race">CreateRace</string>
 </resources>
