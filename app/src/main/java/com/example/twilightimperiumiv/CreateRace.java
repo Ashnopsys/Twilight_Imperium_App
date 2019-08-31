@@ -22,7 +22,7 @@ import com.google.gson.Gson;
 import java.util.ArrayList;
 
 public class CreateRace extends AppCompatActivity {
-    ArrayList<String> racesNames = new ArrayList<>();
+    ArrayList<CustomRace> racesNames = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +65,7 @@ public class CreateRace extends AppCompatActivity {
                 String raceName = raceNameTV.toString();
 
                 CustomRace newRace = new CustomRace(raceName);
-                racesNames.add(raceName);
+                racesNames.add(newRace);
                 Gson gson = new Gson();
                 String racesHistoryListToString = gson.toJson(racesNames);
 
