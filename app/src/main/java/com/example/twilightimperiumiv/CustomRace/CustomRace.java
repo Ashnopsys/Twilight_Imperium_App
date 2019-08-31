@@ -6,12 +6,12 @@ import java.util.ArrayList;
 
 public class CustomRace extends Race {
 
-    String name;
-    ArrayList<String> factionAbilities = new ArrayList<>();
-    ArrayList<String> startingTech = new ArrayList<>();
-    StringBuilder lore = new StringBuilder();
+    private String customRaceName;
+    private ArrayList<String> factionAbilities = new ArrayList<>();
+    private ArrayList<String> startingTech = new ArrayList<>();
+    private StringBuilder lore = new StringBuilder();
 
-    Flagship flagship;
+    private Flagship flagship;
 
     private boolean customDreadnought = false;
     private boolean customWarsun = false;
@@ -23,14 +23,21 @@ public class CustomRace extends Race {
     private boolean customInfantry = false;
     private boolean customSpaceDock = false;
 
-    public CustomRace (String name){this.name = name;}
+    public CustomRace (String customRaceName) {
+        this.customRaceName = customRaceName;
+    }
+
+    @Override
+    public String getName() {
+        return customRaceName;
+    }
 
     public class FactionAbility{
         //Use anonymous classes to make abilities
         String factionAbilityName;
         String factionAbilityDescription;
-        public FactionAbility(String name, String description){
-            this.factionAbilityName = name;
+        public FactionAbility(String factionAbilityName, String description){
+            this.factionAbilityName = factionAbilityName;
             this.factionAbilityDescription = description;
         }
 

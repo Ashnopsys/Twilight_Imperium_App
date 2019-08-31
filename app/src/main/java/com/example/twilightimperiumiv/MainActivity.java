@@ -55,11 +55,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        int buttonMapID = R.id.randomRaceBut;
-//        View w = findViewById(buttonMapID);
-//        Button mapBut = (Button) w;
-//        mapBut.setOnClickListener(new MyClickListener());
-
+        int customRacesScreen = R.id.customRacesScreenBut;
+        View customRaces = findViewById(customRacesScreen);
+        Button customRacesBut = (Button) customRaces;
+        customRacesBut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                System.out.println("Click List");
+                Intent intent = new Intent(view.getContext(), CustomRacesScreen.class);
+                startActivity(intent);
+            }
+        });
 
     }
 

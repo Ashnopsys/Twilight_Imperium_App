@@ -9,11 +9,16 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+import com.example.twilightimperiumiv.CustomRace.CustomRace;
+
+import java.util.ArrayList;
+
 public class CustomRacesScreen extends AppCompatActivity {
 
     RecyclerView recyclerView;
+    Adapter rAdapt;
     //need to get serialized version of list and create list here to put in
-    String[] items;
+    ArrayList<CustomRace> items = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,18 +26,19 @@ public class CustomRacesScreen extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
         recyclerView = (RecyclerView) findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new Adapter(this, items));
 
+        ArrayList<CustomRace> races = RaceList.getFromPrefs(this);
+        if(races.size() <= 0) {
+            System.out.println("Empty");
+        } else {
+            for (int i = 0; i < races.size(); i++) {
+                rAdapt.addItem(races.get(i));
+                System.out.print(races.size());
+            }
+        }
 
     }
 

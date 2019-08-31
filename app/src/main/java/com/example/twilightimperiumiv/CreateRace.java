@@ -1,6 +1,8 @@
 package com.example.twilightimperiumiv;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -14,9 +16,13 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.example.twilightimperiumiv.CustomRace.CustomRace;
 import com.google.gson.Gson;
 
+import java.util.ArrayList;
+
 public class CreateRace extends AppCompatActivity {
+    ArrayList<String> racesNames = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +31,9 @@ public class CreateRace extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        View factionAbilitiesButton= findViewById(R.id.floatingFactionAbilitiesButton);
+        View factionAbilitiesButton = findViewById(R.id.floatingFactionAbilitiesButton);
+
+
         factionAbilitiesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -43,13 +51,28 @@ public class CreateRace extends AppCompatActivity {
                 abilitiesSV.addView(abilityDescription);
             }
         });
-
-        Gson gson = new Gson();
-        String customRaceToString; //need to add sharedprefs before this
         Button saveButton = findViewById(R.id.saveButton);
         saveButton.setOnClickListener(new View.OnClickListener() {
+            /*TODO:
+             *want to save both the Race into an array and also save the racename
+             * the Race needs to be reloadable while the racename needs to be displayed in the
+             * RecyclerView*/
             @Override
             public void onClick(View view) {
+
+                racesNames = RaceList.getFromPrefs(CreateRace.this);
+                TextView raceNameTV = findViewById(R.id.raceName);
+                String raceName = raceNameTV.toString();
+
+                CustomRace newRace = new CustomRace(raceName);
+                racesNames.add(raceName);
+                Gson gson = new Gson();
+                String racesHistoryListToString = gson.toJson(racesNames);
+
+                SharedPreferences prefs = getSharedPreferences("prefs", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putString("history", racesHistoryListToString);
+                editor.apply();
 
             }
         });
@@ -57,8 +80,7 @@ public class CreateRace extends AppCompatActivity {
 
     }
 
-    public void makeNewFactionAbility(){
-
+    public void makeNewFactionAbility() {
 
 
     }

@@ -38,6 +38,10 @@ public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         return items.size();
     }
 
+    public void  addItem(CustomRace item){
+        items.add(item);
+    }
+
     public class Item extends RecyclerView.ViewHolder {
         TextView textView;
         public Item (View itemView) {

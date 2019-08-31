@@ -1,5 +1,14 @@
 package com.example.twilightimperiumiv;
 
+import android.app.Activity;
+import android.content.SharedPreferences;
+
+import com.example.twilightimperiumiv.CustomRace.CustomRace;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -47,6 +56,31 @@ public class RaceList {
         races.add(xxcha);
         return races;
 
+    }
+
+    public static ArrayList<CustomRace> getFromPrefs(Activity activity) {
+        ArrayList<CustomRace> races = new ArrayList<>();
+
+        SharedPreferences prefs = activity.getSharedPreferences("prefs", activity.getBaseContext().MODE_PRIVATE);
+        String history = prefs.getString("history", "");
+        Gson gson = new Gson();
+
+        if (history.length() > 0) {
+            JsonParser parser = new JsonParser();
+            JsonArray array = parser.parse(history).getAsJsonArray();
+            for (int i = 0; i < array.size(); i++) {
+                JsonObject raceObject = (JsonObject) array.get(i);
+                String name = raceObject.get("customRaceName").getAsString();
+
+
+
+                //Color color = moodObject.get("color").getasColor();
+                /* XXX: not recovering colour yet */
+                races.add(new CustomRace(name));
+            }
+        }
+
+        return races;
     }
 
 }
