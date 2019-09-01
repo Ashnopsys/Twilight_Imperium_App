@@ -9,11 +9,13 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.google.gson.reflect.TypeToken;
 
 import org.json.JSONArray;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class RaceList {
 
@@ -72,7 +74,11 @@ public class RaceList {
             JsonArray array = parser.parse(history).getAsJsonArray();
             for (int i = 0; i < array.size(); i++) {
                 JsonElement raceObject =  array.get(i);
-                String name = raceObject.toString();
+
+                races = new Gson().fromJson(array, new TypeToken<List<CustomRace>>(){}.getType());
+
+
+                String name = races.get(i).getName();
 
                 CustomRace loadedRace = new CustomRace(name);
 

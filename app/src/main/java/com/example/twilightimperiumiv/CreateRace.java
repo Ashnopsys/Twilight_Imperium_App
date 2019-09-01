@@ -33,7 +33,7 @@ public class CreateRace extends AppCompatActivity {
 
         View factionAbilitiesButton = findViewById(R.id.floatingFactionAbilitiesButton);
 
-
+        //TODO Prevent empty name space
         factionAbilitiesButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,7 +62,9 @@ public class CreateRace extends AppCompatActivity {
 
                 racesNames = RaceList.getFromPrefs(CreateRace.this);
                 TextView raceNameTV = findViewById(R.id.raceName);
-                String raceName = raceNameTV.toString();
+                CharSequence raceNameChar = raceNameTV.getText();
+
+                String raceName = raceNameTV.getText().toString();
 
                 CustomRace newRace = new CustomRace(raceName);
                 racesNames.add(newRace);
