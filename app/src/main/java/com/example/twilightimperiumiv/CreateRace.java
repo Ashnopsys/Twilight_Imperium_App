@@ -60,17 +60,17 @@ public class CreateRace extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-              //  racesNames = RaceList.getFromPrefs(CreateRace.this);
+                racesNames = RaceList.getFromPrefs(CreateRace.this);
                 TextView raceNameTV = findViewById(R.id.raceName);
                 String raceName = raceNameTV.toString();
 
                 CustomRace newRace = new CustomRace(raceName);
                 racesNames.add(newRace);
+
                 Gson gson = new Gson();
+                SharedPreferences prefs = getSharedPreferences("prefs", Context.MODE_PRIVATE);
                 String racesHistoryListToString = gson.toJson(racesNames);
 
-                SharedPreferences prefs = getSharedPreferences("prefs", Context.MODE_PRIVATE);
-                racesNames = gson.fromJson(prefs.getString("history", ""));
                 SharedPreferences.Editor editor = prefs.edit();
                 editor.putString("history", racesHistoryListToString);
                 editor.apply();

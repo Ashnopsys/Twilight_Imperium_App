@@ -6,8 +6,11 @@ import android.content.SharedPreferences;
 import com.example.twilightimperiumiv.CustomRace.CustomRace;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+
+import org.json.JSONArray;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -68,9 +71,10 @@ public class RaceList {
             JsonParser parser = new JsonParser();
             JsonArray array = parser.parse(history).getAsJsonArray();
             for (int i = 0; i < array.size(); i++) {
-                JsonObject raceObject = (JsonObject) array.get(i);
-                String name = raceObject.get("customRaceName").getAsString();
+                JsonElement raceObject =  array.get(i);
+                String name = raceObject.toString();
 
+                CustomRace loadedRace = new CustomRace(name);
 
 
                 //Color color = moodObject.get("color").getasColor();
