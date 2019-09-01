@@ -16,7 +16,6 @@ import java.util.ArrayList;
 public class CustomRacesScreen extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    //need to get serialized version of list and create list here to put in
     ArrayList<CustomRace> items = new ArrayList<>();
     Adapter rAdapt = new Adapter(this, items);
 
@@ -31,7 +30,6 @@ public class CustomRacesScreen extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(new Adapter(this, items));
 
-       // ArrayList<CustomRace> races = RaceList.getFromPrefs(this);
         items = RaceList.getFromPrefs(this);
         if(items.size() <= 0) {
             System.out.println("Empty");

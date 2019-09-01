@@ -62,8 +62,6 @@ public class CreateRace extends AppCompatActivity {
 
                 racesNames = RaceList.getFromPrefs(CreateRace.this);
                 TextView raceNameTV = findViewById(R.id.raceName);
-                CharSequence raceNameChar = raceNameTV.getText();
-
                 String raceName = raceNameTV.getText().toString();
 
                 CustomRace newRace = new CustomRace(raceName);

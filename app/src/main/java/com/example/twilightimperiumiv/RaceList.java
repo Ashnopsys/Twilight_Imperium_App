@@ -36,8 +36,6 @@ public class RaceList {
     Race mentak = new Race ("The Mentak Collective", "mentak", "mentak_coalition");
     Race sardakk = new Race ("The Sardakk N'orr", "sardakk", "sardakk_nnoir");
     Race xxcha = new Race ("The Xxcha Kingdom", "xxcha", "xxcha");
-  //  Race[] races = new Race[] {hacan, creuss, arborec, muaat, naalu, jolnaar, yin, letnev, l1z1x,
-  //  nekro, winnu, yssaril, saar, sol, mentak, sardakk, xxcha};
 
     public ArrayList<Race> getRaceList(){
         //possibly need to make a separate list or change the list entirely for custom races.
@@ -65,7 +63,6 @@ public class RaceList {
 
     public static ArrayList<CustomRace> getFromPrefs(Activity activity) {
         ArrayList<CustomRace> races = new ArrayList<>();
-
         SharedPreferences prefs = activity.getSharedPreferences("prefs", activity.getBaseContext().MODE_PRIVATE);
         String history = prefs.getString("history", "");
 
@@ -73,23 +70,18 @@ public class RaceList {
             JsonParser parser = new JsonParser();
             JsonArray array = parser.parse(history).getAsJsonArray();
             for (int i = 0; i < array.size(); i++) {
-                JsonElement raceObject =  array.get(i);
-
+                //Grab array from Json array
                 races = new Gson().fromJson(array, new TypeToken<List<CustomRace>>(){}.getType());
-
-
                 String name = races.get(i).getName();
-
-                CustomRace loadedRace = new CustomRace(name);
-
-
-                //Color color = moodObject.get("color").getasColor();
-                /* XXX: not recovering colour yet */
+                /*
+                * For going to a "CustomRaceViewerScreen" implement a
+                * getCustomRace class based on the name of the empire. Will need to
+                * restrict making Empires with the same name, also implement delete customRace...
+                * for loop until find name remove.get(i)
+                * */
                 races.add(new CustomRace(name));
             }
         }
-
         return races;
     }
-
 }

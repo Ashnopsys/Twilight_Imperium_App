@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import android.support.design.widget.NavigationView;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.support.v7.app.AppCompatActivity;
@@ -29,7 +30,6 @@ public class RaceInfo extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         Intent raceIntent = getIntent();
-        //      Race message = (Race)raceIntent.getSerializableExtra("RACE_LORE");
 
         //Can now compare message to the RaceList and find Race that way.
         String message = (String) raceIntent.getSerializableExtra("RACE_LORE");
@@ -39,6 +39,13 @@ public class RaceInfo extends AppCompatActivity {
 
         Race SELECTED_RACE = findRaceInList(message);
         String SELECT_RACE_FILENAME = SELECTED_RACE.getLoreFileName() + ".txt";
+
+
+        //Set Race Image
+        ImageView image = (ImageView) findViewById(R.id.raceImage);
+        image.setImageResource(getResources().getIdentifier(SELECTED_RACE.getImageName(), "drawable",
+                this.getPackageName()));
+
 
 
         try {
@@ -62,10 +69,7 @@ public class RaceInfo extends AppCompatActivity {
                     //log the exception
                 }
             }
-//            ScrollView scrollView = (ScrollView) findViewById(R.id.scrollView);
-//            View headerView = scrollView.getRootView();
             TextView output = (TextView) findViewById(R.id.textView4);
-
             output.setText((CharSequence) text);
         }
     }
