@@ -63,7 +63,6 @@ public class RaceList {
 
         SharedPreferences prefs = activity.getSharedPreferences("prefs", activity.getBaseContext().MODE_PRIVATE);
         String history = prefs.getString("history", "");
-        Gson gson = new Gson();
 
         if (history.length() > 0) {
             JsonParser parser = new JsonParser();
