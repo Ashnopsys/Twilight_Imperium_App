@@ -44,16 +44,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        int buttonMapID = R.id.randomRaceBut;
-//        View w = findViewById(buttonMapID);
-//        Button mapBut = (Button) w;
-//        mapBut.setOnClickListener(new MyClickListener());
-
 
     }
 
 
     public Race getRandomRace(){
+        //method for the RandomRace Activity
         Random rand = new Random();
         int number = rand.nextInt(races.getRaceList().size());
         return races.getRaceList().get(number);
