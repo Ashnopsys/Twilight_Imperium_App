@@ -1,5 +1,6 @@
 package com.example.twilightimperiumiv.CustomRace;
 
+import com.example.twilightimperiumiv.CustomRace.Ships.Flagship;
 import com.example.twilightimperiumiv.Race;
 
 import java.util.ArrayList;
