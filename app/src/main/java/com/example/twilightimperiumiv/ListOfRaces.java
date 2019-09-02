@@ -43,10 +43,12 @@ public class ListOfRaces extends AppCompatActivity {
 
                 intent.putExtra("RACE_LORE", button.getText());
                 startActivity(intent);
+
             }
         });
 
         }
+
 
    }
 

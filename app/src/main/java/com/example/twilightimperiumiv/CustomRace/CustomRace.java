@@ -1,6 +1,5 @@
 package com.example.twilightimperiumiv.CustomRace;
 
-import com.example.twilightimperiumiv.CustomRace.Ships.Flagship;
 import com.example.twilightimperiumiv.Race;
 
 import java.util.ArrayList;
@@ -11,8 +10,6 @@ public class CustomRace extends Race {
     private ArrayList<String> factionAbilities = new ArrayList<>();
     private ArrayList<String> startingTech = new ArrayList<>();
     private StringBuilder lore = new StringBuilder();
-
-    private Flagship flagship;
 
     private boolean customDreadnought = false;
     private boolean customWarsun = false;
