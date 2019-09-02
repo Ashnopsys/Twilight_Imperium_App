@@ -13,36 +13,45 @@ public class Ship {
     protected int capacity;
     protected int move;
     protected boolean isUpgradable = false;
+    protected  boolean isCustomShip = false;
 
-    public Ship(ShipType shipType) {
+    public Ship(ShipType shipType, boolean isCustomShip) {
         this.shipType = shipType;
+        this.isCustomShip = isCustomShip;
+        if(this.isCustomShip == true) {
+            //Require some sort of input to make custom stats
 
-        switch(shipType) {
-            case DESTROYER:
-                setStats(1, 9, 0, 2);
-                break;
-            case CRUISER:
-                setStats(2, 7, 0, 2);
-                break;
-            case CARRIER:
-                setStats(3, 9, 4, 1);
-                break;
-            case DREADNOUGHT:
-                setStats(4, 5, 1, 1);
-                break;
-            case WARSUN:
-                setStats(0, 0, 0, 0);
-                break;
-            case FIGHTER:
-                setStats(1, 9, 0, 0);
-                break;
-            case INFANTRY:
-                setStats(1, 8, 0, 0);
-                break;
-            case FLAGSHIP:
-                setStats(0, 0, 0, 0);
-                break;
+
+        } else {
+            switch(shipType) {
+                case DESTROYER:
+                    setStats(1, 9, 0, 2);
+                    break;
+                case CRUISER:
+                    setStats(2, 7, 0, 2);
+                    break;
+                case CARRIER:
+                    setStats(3, 9, 4, 1);
+                    break;
+                case DREADNOUGHT:
+                    setStats(4, 5, 1, 1);
+                    break;
+                case WARSUN:
+                    setStats(0, 0, 0, 0);
+                    break;
+                case FIGHTER:
+                    setStats(1, 9, 0, 0);
+                    break;
+                case INFANTRY:
+                    setStats(1, 8, 0, 0);
+                    break;
+                case FLAGSHIP:
+                    setStats(0, 0, 0, 0);
+                    break;
+            }
+
         }
+
     }
 
     public void setStats(int cost, int combat, int capacity, int move) {
