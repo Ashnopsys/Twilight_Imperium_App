@@ -30,7 +30,6 @@ public class RaceInfo extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         Intent raceIntent = getIntent();
-        //      Race message = (Race)raceIntent.getSerializableExtra("RACE_LORE");
 
         //Can now compare message to the RaceList and find Race that way.
         String message = (String) raceIntent.getSerializableExtra("RACE_LORE");
