@@ -1,5 +1,6 @@
 package com.example.twilightimperiumiv.CustomRace;
 
+import com.example.twilightimperiumiv.CustomRace.Ships.Ship;
 import com.example.twilightimperiumiv.Race;
 
 import java.util.ArrayList;
@@ -39,6 +40,18 @@ public class CustomRace extends Race {
             this.factionAbilityDescription = description;
         }
 
+    }
+
+    public boolean hasOneTypeOfEachShip(ArrayList<Ship> shipList) {
+        return false;
+    }
+
+    public boolean hasAllShipTypes(ArrayList<Ship> shipList) {
+        if (shipList.size() == 8) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
 

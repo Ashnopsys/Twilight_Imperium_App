@@ -96,4 +96,7 @@
     <string name="title_activity_race_info2">RaceInfo2</string>
     <string name="title_activity_create_race">CreateRace</string>
     <string name="title_activity_custom_races_screen">CustomRacesScreen</string>
+    <string name="title_activity_create_race_screen">CreateRaceScreen</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
 </resources>

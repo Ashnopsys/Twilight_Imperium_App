@@ -1,5 +1,7 @@
 package com.example.twilightimperiumiv.CustomRace.Ships;
 
+import java.util.ArrayList;
+
 enum ShipType {
     DESTROYER, CRUISER, CARRIER, DREADNOUGHT, WARSUN, FIGHTER, INFANTRY, FLAGSHIP //unsure about flagship being Enum
 }
@@ -15,12 +17,14 @@ public class Ship {
     protected boolean isUpgradable = false;
     protected  boolean isCustomShip = false;
 
-    public Ship(ShipType shipType, boolean isCustomShip) {
+    public Ship(ShipType shipType, boolean isCustomShip, ArrayList<Ship> customShips) {
         this.shipType = shipType;
         this.isCustomShip = isCustomShip;
         if(this.isCustomShip == true) {
             //Require some sort of input to make custom stats
-
+            //set stats to 0 and can add this to a list to track custom ships.
+            setStats(0, 0, 0, 0);
+            customShips.add(this);
 
         } else {
             switch(shipType) {

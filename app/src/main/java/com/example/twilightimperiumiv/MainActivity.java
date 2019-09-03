@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 System.out.println("Click List");
-                Intent intent = new Intent(view.getContext(), CustomRacesScreen.class);
+                Intent intent = new Intent(view.getContext(), CreateRaceScreen.class);
                 startActivity(intent);
             }
         });
