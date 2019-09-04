@@ -2,23 +2,17 @@ package com.example.twilightimperiumiv;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import android.support.design.widget.NavigationView;
-import android.view.View;
-import android.widget.ScrollView;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.widget.Toast;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-
 public class RaceInfo extends AppCompatActivity {
 
-    private TextView textView;
     private StringBuilder text = new StringBuilder();
 
     @Override
@@ -26,7 +20,6 @@ public class RaceInfo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_race_info);
         BufferedReader reader = null;
-
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         Intent raceIntent = getIntent();
@@ -40,6 +33,10 @@ public class RaceInfo extends AppCompatActivity {
         Race SELECTED_RACE = findRaceInList(message);
         String SELECT_RACE_FILENAME = SELECTED_RACE.getLoreFileName() + ".txt";
 
+        //Set Race Image
+        ImageView image = (ImageView) findViewById(R.id.raceImage);
+        image.setImageResource(getResources().getIdentifier(SELECTED_RACE.getImageName(), "drawable",
+                this.getPackageName()));
 
         try {
             reader = new BufferedReader(
@@ -62,17 +59,10 @@ public class RaceInfo extends AppCompatActivity {
                     //log the exception
                 }
             }
-//            ScrollView scrollView = (ScrollView) findViewById(R.id.scrollView);
-//            View headerView = scrollView.getRootView();
             TextView output = (TextView) findViewById(R.id.textView4);
-
             output.setText((CharSequence) text);
         }
     }
-
-
-
-
 
     public Race findRaceInList(String raceName) {
         RaceList racelist = new RaceList();
@@ -87,9 +77,5 @@ public class RaceInfo extends AppCompatActivity {
             }
         }
         return null;
-    }
-
-    public String loreText(){
-        return "";
     }
 }

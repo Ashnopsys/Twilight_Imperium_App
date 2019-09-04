@@ -44,6 +44,28 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        View customRace = findViewById(R.id.custom_race_button);
+        Button customRaceBut = (Button) customRace;
+        customRaceBut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                System.out.println("Click List");
+                Intent intent = new Intent(view.getContext(), CreateRace.class);
+                startActivity(intent);
+            }
+        });
+
+        int customRacesScreen = R.id.customRacesScreenBut;
+        View customRaces = findViewById(customRacesScreen);
+        Button customRacesBut = (Button) customRaces;
+        customRacesBut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                System.out.println("Click List");
+                Intent intent = new Intent(view.getContext(), TabCreateRace.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
