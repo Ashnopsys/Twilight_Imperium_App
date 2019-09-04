@@ -71,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public Race getRandomRace(){
+        //method for the RandomRace Activity
         Random rand = new Random();
         int number = rand.nextInt(races.getRaceList().size());
         return races.getRaceList().get(number);
