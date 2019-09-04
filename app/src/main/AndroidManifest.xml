@@ -12,8 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.NoActionBar">
         <activity
-            android:name=".CreateRaceScreen"
-            android:label="@string/title_activity_create_race_screen"
+            android:name=".TabCreateRace"
+            android:label="@string/title_activity_tabbed__custom__race"
             android:theme="@style/NoActionBar"></activity>
         <activity
             android:name=".CustomRacesScreen"
