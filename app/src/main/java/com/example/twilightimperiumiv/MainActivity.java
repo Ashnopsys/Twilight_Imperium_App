@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 System.out.println("Click List");
-                Intent intent = new Intent(view.getContext(), CreateRace.class);
+                Intent intent = new Intent(view.getContext(), TabCreateRace.class);
                 startActivity(intent);
             }
         });
@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 System.out.println("Click List");
-                Intent intent = new Intent(view.getContext(), TabCreateRace.class);
+                Intent intent = new Intent(view.getContext(), CustomRacesScreen.class);
                 startActivity(intent);
             }
         });
