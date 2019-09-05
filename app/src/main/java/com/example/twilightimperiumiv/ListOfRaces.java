@@ -23,7 +23,7 @@ public class ListOfRaces extends AppCompatActivity {
         setSupportActionBar(toolbar);
         final RaceList raceList = new RaceList();
 
-
+        /*make a linear layout to add all of our buttons to*/
         LinearLayout layout = (LinearLayout) findViewById(R.id.linearView);
         for (i = 0;i < raceList.getRaceList().size(); i++) // iterate over array of existing races
         {
@@ -43,10 +43,12 @@ public class ListOfRaces extends AppCompatActivity {
 
                 intent.putExtra("RACE_LORE", button.getText());
                 startActivity(intent);
+
             }
         });
 
         }
+
    }
 
 

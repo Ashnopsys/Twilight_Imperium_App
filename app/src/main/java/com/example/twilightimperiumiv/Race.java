@@ -21,6 +21,9 @@ public class Race implements Serializable {
     public String getImageName() {
         return imageName;
     }
+    public Race() {
+
+    }
 
     public Race (String name, String imageName, String loreFileName) {
         this.name = name;
