@@ -9,4 +9,10 @@
         android:text="Third tab"
         android:textSize="40sp"/>
 
+    <TextView
+        android:id="@+id/textViewAaa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Please Baby, Oh please don't go" />
+
 </FrameLayout>

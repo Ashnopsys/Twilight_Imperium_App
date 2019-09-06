@@ -16,6 +16,7 @@ import com.example.twilightimperiumiv.RaceList
 import com.example.twilightimperiumiv.TabCreateRace
 import kotlinx.android.synthetic.main.fragment_one.*
 import kotlinx.android.synthetic.main.fragment_one.view.*
+import kotlinx.android.synthetic.main.fragment_three.view.*
 
 
 /**
@@ -29,13 +30,25 @@ class FragmentOne : Fragment() {
         // Inflate the layout for this fragment
         val view: View = inflater!!.inflate(R.layout.fragment_one, container, false)
 
+        //Typed in Race Name
+
+
+
         view.raceNameFragOne.setOnClickListener {
-            Log.d("AAAA","Hello, button pressed")
+            var raceName : String = view.raceNameEditView.text.toString()
+            var homePlanetName : String = view.planetNameEditView.text.toString()
+            var planetResources : String = view.planetResourcesEditText.text.toString()
+            var planetInfluence : String = view.planetInfluenceEditView.text.toString()
+
+
+            Log.d("AAAA", raceName)
         }
+
+     //   val collection = arrayOf(raceName, homePlanetName, planetResources, planetInfluence)
 
         return view    }
 
-    fun fragments() {
+    fun getBasicInfo() {
 
     }
 }
