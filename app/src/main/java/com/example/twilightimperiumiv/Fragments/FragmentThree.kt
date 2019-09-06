@@ -17,6 +17,9 @@ class FragmentThree : Fragment() {
         // Inflate the layout for this fragment
         val view: View = inflater!!.inflate(R.layout.fragment_three, container, false)
 
+        /*
+        If imageButton is selected set race isCustomShip to True else false
+         */
         return view
     }
 }

@@ -1,18 +1,89 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Third tab"
-        android:textSize="40sp"/>
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textViewAaa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Please Baby, Oh please don't go" />
+        <HorizontalScrollView
+            android:id="@+id/horizontalScrollView"
+            android:layout_width="377dp"
+            android:layout_height="184dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.224">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/imageButton"
+                    android:layout_width="450px"
+                    android:layout_height="450px"
+                    android:layout_weight="1"
+                    android:background="@drawable/creuss"
+                    tools:srcCompat="@android:drawable/alert_dark_frame" />
+
+                <ImageButton
+                    android:id="@+id/imageButton2"
+                    android:layout_width="450px"
+                    android:layout_height="450px"
+                    android:background="@drawable/hacan"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <ImageButton
+                    android:id="@+id/imageButton3"
+                    android:layout_width="450px"
+                    android:layout_height="450px"
+                    android:layout_weight="1"
+                    android:background="@drawable/l1z1x"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <ImageButton
+                    android:id="@+id/imageButton4"
+                    android:layout_width="450px"
+                    android:layout_height="450px"
+                    android:layout_weight="1"
+                    android:background="@drawable/sol"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <ImageButton
+                    android:id="@+id/imageButton5"
+                    android:layout_width="450px"
+                    android:layout_height="450px"
+                    android:layout_weight="1"
+                    android:background="@drawable/saar"
+                    tools:srcCompat="@tools:sample/avatars" />
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <TextView
+            android:id="@+id/customShipHead"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="Select which ships will have custom stats"
+            app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.265"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.576" />
+
+    </android.support.constraint.ConstraintLayout>
 
 </FrameLayout>
