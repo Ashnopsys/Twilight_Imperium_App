@@ -33,9 +33,4 @@ public class Race implements Serializable {
 
 
 
-    public void getLore(){
-
-
-    }
-
 }

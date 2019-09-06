@@ -8,8 +8,14 @@ import java.util.ArrayList;
 public class CustomRace extends Race {
 
     private String customRaceName;
-    private ArrayList<String> factionAbilities = new ArrayList<>();
+    private String planetName;
+    private int planetResources;
+    private int planetInfluence;
+
+    private ArrayList<FactionAbility> factionAbilities = new ArrayList<>();
     private ArrayList<String> startingTech = new ArrayList<>();
+
+
     private StringBuilder lore = new StringBuilder();
 
     private boolean customDreadnought = false;
