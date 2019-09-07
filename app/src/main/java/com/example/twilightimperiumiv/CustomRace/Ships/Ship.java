@@ -2,9 +2,6 @@ package com.example.twilightimperiumiv.CustomRace.Ships;
 
 import java.util.ArrayList;
 
-enum ShipType {
-    DESTROYER, CRUISER, CARRIER, DREADNOUGHT, WARSUN, FIGHTER, INFANTRY, FLAGSHIP //unsure about flagship being Enum
-}
 
 public class Ship {
 
@@ -126,6 +123,12 @@ public class Ship {
         this.move = move;
     }
 
+    public void setShipType(ShipType shipType) {
+        this.shipType = shipType;
+    }
 
+    public void setCustomShip(boolean customShip) {
+        isCustomShip = customShip;
+    }
 }
 
