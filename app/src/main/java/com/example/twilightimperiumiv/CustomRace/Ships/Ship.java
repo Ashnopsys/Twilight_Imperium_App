@@ -78,6 +78,9 @@ public class Ship {
     public ShipType getShipType() {
         return shipType;
     }
+    public String getShipTypeAsString() {
+        return shipType.toString();
+    }
 
     public String getAbility() {
         return ability;
@@ -101,6 +104,14 @@ public class Ship {
 
     public void setName(ShipType shipType) {
         this.shipType = shipType;
+    }
+
+    public boolean isUpgradable() {
+        return isUpgradable;
+    }
+
+    public boolean isCustomShip() {
+        return isCustomShip;
     }
 
     public void setAbility(String ability) {
