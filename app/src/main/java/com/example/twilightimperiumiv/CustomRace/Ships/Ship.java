@@ -2,22 +2,21 @@ package com.example.twilightimperiumiv.CustomRace.Ships;
 
 import java.util.ArrayList;
 
-
 public class Ship {
 
-    protected ShipType shipType;
-    protected String ability;
-    protected int cost;
-    protected int combat;
-    protected int capacity;
-    protected int move;
-    protected boolean isUpgradable = false;
-    protected  boolean isCustomShip = false;
+    private ShipType shipType;
+    private String ability;
+    private int cost;
+    private int combat;
+    private int capacity;
+    private int move;
+    private boolean isUpgradable = false;
+    private boolean isCustomShip = false;
 
     public Ship(ShipType shipType, boolean isCustomShip, ArrayList<Ship> customShips) {
         this.shipType = shipType;
         this.isCustomShip = isCustomShip;
-        if(this.isCustomShip == true) {
+        if(this.isCustomShip) {
             //Require some sort of input to make custom stats
             //set stats to 0 and can add this to a list to track custom ships.
             setStats(0, 0, 0, 0);
@@ -60,6 +59,15 @@ public class Ship {
         this.combat = combat;
         this.capacity = capacity;
         this.move = move;
+    }
+
+    public Boolean compareShipTypeToString(String shipString, ShipType shipEnum) {
+        if (shipString.equalsIgnoreCase("destroyer") && shipEnum.equals(ShipType.DESTROYER)) {
+            return true;
+        }
+        return false;
+        //TODO Test this method with live app
+        //TODO Finish implementing this method if it is successful
     }
 
     public Ship(ShipType shipType, String ability, int cost, int combat, int capacity, int move) {
