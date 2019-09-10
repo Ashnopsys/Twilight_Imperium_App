@@ -54,7 +54,7 @@ class FragmentThree : Fragment() {
     fun customiseShipStats(pictureID : String, fleetList : ArrayList<Ship>) : ArrayList<Ship>{
 
         for(ship in fleetList) {
-            if
+
         }
 
         return fleetList
