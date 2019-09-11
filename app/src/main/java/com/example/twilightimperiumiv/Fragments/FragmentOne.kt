@@ -32,9 +32,6 @@ class FragmentOne : Fragment() {
         val view: View = inflater!!.inflate(R.layout.fragment_one, container, false)
 
         //Typed in Race Name
-
-
-
         view.raceNameFragOne.setOnClickListener {
             createBasicInfo()
             Log.d("AAAA", createBasicInfo().toString())
