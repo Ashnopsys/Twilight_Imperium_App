@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import com.example.twilightimperiumiv.CustomRace.CustomRace
+import com.example.twilightimperiumiv.CustomRace.CustomRaceModules.BasicInfo
 import com.example.twilightimperiumiv.R
 import com.example.twilightimperiumiv.RaceList
 import com.example.twilightimperiumiv.TabCreateRace
@@ -35,20 +36,20 @@ class FragmentOne : Fragment() {
 
 
         view.raceNameFragOne.setOnClickListener {
-            var raceName : String = view.raceNameEditView.text.toString()
-            var homePlanetName : String = view.planetNameEditView.text.toString()
-            var planetResources : String = view.planetResourcesEditText.text.toString()
-            var planetInfluence : String = view.planetInfluenceEditView.text.toString()
-
-
-            Log.d("AAAA", raceName)
+            createBasicInfo()
+            Log.d("AAAA", createBasicInfo().toString())
         }
-
-     //   val collection = arrayOf(raceName, homePlanetName, planetResources, planetInfluence)
 
         return view    }
 
-    fun getBasicInfo() {
-
+    fun createBasicInfo() : BasicInfo {
+        return BasicInfo (view?.raceNameEditView?.text.toString(),
+                view?.planetNameEditView?.text.toString(),
+                view?.planetResourcesEditText?.text.toString(),
+                view?.planetInfluenceEditView?.text.toString(),
+                view?.loreEditText?.text.toString())
+        //can call this function anytime we want to update the saved fields
     }
+
+
 }

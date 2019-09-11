@@ -8,6 +8,14 @@ public class BasicInfo {
     int planetInfluence;
     String lore;
 
+    public BasicInfo(String name, String planetName, String planetResources, String planetInfluence, String lore) {
+        this.name = name;
+        this.planetName = planetName;
+        this.planetResources = Integer.parseInt(planetResources);
+        this.planetInfluence = Integer.parseInt(planetInfluence);
+        this.lore = lore;
+    }
+
     public String getName() {
         return name;
     }
