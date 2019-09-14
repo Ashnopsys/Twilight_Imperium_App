@@ -30,6 +30,9 @@ class FragmentTwo : Fragment() {
                 val factionAbilityLimit = 3
                 if(increment < factionAbilityLimit) {
                     var idpartTwo = 1
+
+                //    val viewInflat = LayoutInflater.inflate
+
                     val abilityNameHead = TextView(this.context); abilityNameHead.setText("Ability Name")
                     factionAbilitiesLinearLayout.addView(abilityNameHead)
 
