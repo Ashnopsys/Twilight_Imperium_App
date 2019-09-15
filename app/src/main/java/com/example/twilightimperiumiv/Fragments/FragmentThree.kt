@@ -23,6 +23,8 @@ class FragmentThree : Fragment() {
         var fleet: ArrayList<Ship> = ArrayList()
         val destroyer = Ship(ShipType.DESTROYER, false, fleet)
 
+
+        //TODO add clicklistener to image in carosel which will correspond to a ship being custom
         view.hitThis.setOnClickListener() {
             fleet = createFleet()
 
