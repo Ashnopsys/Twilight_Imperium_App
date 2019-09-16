@@ -30,24 +30,9 @@ class FragmentTwo : Fragment() {
                 val factionAbilityLimit = 3
                 if(increment < factionAbilityLimit) {
                     var idpartTwo = 1
+                    factionAbilitiesLinearLayout.addView(createFactionAbilityBox(inflater, container))
 
-                //    val viewInflat = LayoutInflater.inflate
-
-                    val abilityNameHead = TextView(this.context); abilityNameHead.setText("Ability Name")
-                    factionAbilitiesLinearLayout.addView(abilityNameHead)
-
-                    val abilityName = EditText(this.context);
-                    abilityName.id = (increment.toString() + idpartTwo.toString()).toInt() //This disgusts me
-                    factionAbilitiesLinearLayout.addView(abilityName)
-
-                    val abilityDescHead = TextView(this.context); abilityDescHead.setText("Ability Description")
-                    factionAbilitiesLinearLayout.addView(abilityDescHead)
-
-                    val abilityDescription = EditText(this.context)
-                    abilityDescription.id = (increment.toString() + idpartTwo.inc().toString()).toInt()
-                    factionAbilitiesLinearLayout.addView(abilityDescription)
-
-                    System.out.println("AbilityNameID = ${abilityName.id},AbilityDescriptionID =  ${abilityDescription.id}")
+                   // System.out.println("AbilityNameID = ${abilityName.id},AbilityDescriptionID =  ${abilityDescription.id}")
 
                     increment = increment.inc()
                     //      Log.d("Increment", abilityDescription.id.toString())
@@ -63,4 +48,9 @@ class FragmentTwo : Fragment() {
          */
 
     return view    }
+
+    fun createFactionAbilityBox(inflater: LayoutInflater, container : ViewGroup?) :View {
+        val viewInflat = inflater.inflate(R.layout.faction_ability, container, false)
+        return viewInflat
+    }
 }
