@@ -9,7 +9,9 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import com.example.twilightimperiumiv.CustomRace.CustomRaceModules.FactionAbility
 import com.example.twilightimperiumiv.R
+import kotlinx.android.synthetic.main.faction_ability.view.*
 import kotlinx.android.synthetic.main.fragment_two.*
 import kotlinx.android.synthetic.main.fragment_two.view.*
 
@@ -25,15 +27,17 @@ class FragmentTwo : Fragment() {
         val view: View = inflater!!.inflate(R.layout.fragment_two, container, false)
 
         var increment : Int = 0
-
+        val abilities = arrayListOf<FactionAbility>()
             view.addFactionAbility.setOnClickListener() {
                 val factionAbilityLimit = 3
                 if(increment < factionAbilityLimit) {
-                    var idpartTwo = 1
+                    var idNumber = 1
                     factionAbilitiesLinearLayout.addView(createFactionAbilityBox(inflater, container))
-
+                    val abilityName = factionAbilitiesLinearLayout.abilityNameEditText.toString()
+                    val abilityDescription = factionAbilitiesLinearLayout.abilityDescriptionEditText.toString()
+                    //need to add id to each ability. This needs changed as it will save blank fields
                    // System.out.println("AbilityNameID = ${abilityName.id},AbilityDescriptionID =  ${abilityDescription.id}")
-
+                    abilities.add(FactionAbility(abilityName, abilityDescription))
                     increment = increment.inc()
                     //      Log.d("Increment", abilityDescription.id.toString())
                 } else {
@@ -47,10 +51,10 @@ class FragmentTwo : Fragment() {
         and add them to a list for the race.
          */
 
-    return view    }
+    return view
+    }
 
-    fun createFactionAbilityBox(inflater: LayoutInflater, container : ViewGroup?) :View {
-        val viewInflat = inflater.inflate(R.layout.faction_ability, container, false)
-        return viewInflat
+    private fun createFactionAbilityBox(inflater: LayoutInflater, container : ViewGroup?) :View {
+        return inflater.inflate(R.layout.faction_ability, container, false)
     }
 }
