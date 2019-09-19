@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.NoActionBar">
-        <activity android:name=".CustomRace.EnterBasicInfo"></activity>
+        <activity android:name=".CustomRace.EnterFactionAbilities"></activity>
+        <activity android:name=".CustomRace.EnterBasicInfo" />
         <activity
             android:name=".TabCreateRace"
             android:label="@string/title_activity_tabbed__custom__race"
