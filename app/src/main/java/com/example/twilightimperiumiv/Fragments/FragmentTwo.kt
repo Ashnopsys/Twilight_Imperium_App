@@ -37,7 +37,6 @@ class FragmentTwo : Fragment() {
                     val abilityDescription = factionAbilitiesLinearLayout.abilityDescriptionEditText.toString()
                     //need to add id to each ability. This needs changed as it will save blank fields
                    // System.out.println("AbilityNameID = ${abilityName.id},AbilityDescriptionID =  ${abilityDescription.id}")
-                    abilities.add(FactionAbility(abilityName, abilityDescription))
                     increment = increment.inc()
                     //      Log.d("Increment", abilityDescription.id.toString())
                 } else {

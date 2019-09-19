@@ -12,6 +12,8 @@ import android.view.animation.LinearInterpolator;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.example.twilightimperiumiv.CustomRace.EnterBasicInfo;
+
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -81,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 System.out.println("Click List");
-                Intent intent = new Intent(view.getContext(), TabCreateRace.class);
+                Intent intent = new Intent(view.getContext(), EnterBasicInfo.class);
                 startActivity(intent);
             }
         });

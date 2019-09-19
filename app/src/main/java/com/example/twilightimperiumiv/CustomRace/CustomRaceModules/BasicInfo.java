@@ -16,6 +16,8 @@ public class BasicInfo {
         this.lore = lore;
     }
 
+    public BasicInfo() {}
+
     public String getName() {
         return name;
     }

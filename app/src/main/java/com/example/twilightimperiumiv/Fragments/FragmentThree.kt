@@ -1,16 +1,20 @@
 package com.example.twilightimperiumiv.Fragments
 
+import android.arch.lifecycle.Observer
+import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.twilightimperiumiv.CustomRace.CustomRace
+import com.example.twilightimperiumiv.CustomRace.CustomRaceModules.BasicInfo
+import com.example.twilightimperiumiv.CustomRace.CustomRaceModules.FactionAbility
 import com.example.twilightimperiumiv.CustomRace.Ships.Ship
 import com.example.twilightimperiumiv.CustomRace.Ships.ShipType
 import com.example.twilightimperiumiv.R
 import kotlinx.android.synthetic.main.fragment_three.view.*
-import kotlinx.android.synthetic.main.fragment_two.view.*
 
 /**
  * A simple [Fragment] subclass.
@@ -22,11 +26,21 @@ class FragmentThree : Fragment() {
         val view: View = inflater!!.inflate(R.layout.fragment_three, container, false)
         var fleet: ArrayList<Ship> = ArrayList()
         val destroyer = Ship(ShipType.DESTROYER, false, fleet)
+        val customRace = CustomRace()
 
 
         //TODO add clicklistener to image in carosel which will correspond to a ship being custom
-        view.hitThis.setOnClickListener() {
-            fleet = createFleet()
+        view.saveRaceButton.setOnClickListener() {
+
+            activity?.let {
+                val model = ViewModelProviders.of(it).get(Communicator::class.java)
+
+            }
+
+            customRace.setShipSheet(createFleet())
+
+
+
 
             for (ship in fleet) {
                 Log.d("Ships", "${ship.shipTypeAsString} is Custom: ${ship.isCustomShip.toString()}")
@@ -51,7 +65,7 @@ class FragmentThree : Fragment() {
             fleet.add(newShip)
         }
         return fleet
-    }
+        }
 
     fun customiseShipStats(pictureID : String, fleetList : ArrayList<Ship>) : ArrayList<Ship>{
 

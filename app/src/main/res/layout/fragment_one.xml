@@ -24,7 +24,7 @@
                 android:layout_marginBottom="8dp"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Name"
+                android:hint="Enter a name"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.175"
@@ -77,7 +77,7 @@
                 android:layout_marginRight="8dp"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Planet Name"
+                android:hint="Enter a Home Planet name"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.175"
                 app:layout_constraintStart_toStartOf="parent"
@@ -100,6 +100,8 @@
 
             <EditText
                 android:id="@+id/loreEditText"
+                android:hint="Enter the lore for your race!"
+
                 android:layout_width="294dp"
                 android:layout_height="158dp"
                 android:layout_marginStart="8dp"
@@ -115,13 +117,12 @@
                 app:layout_constraintTop_toBottomOf="@+id/loreTextView" />
 
             <Button
-                android:id="@+id/raceNameFragOne"
+                android:id="@+id/saveButFragOne"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="288dp"
-                android:layout_marginLeft="288dp"
-                android:layout_marginTop="320dp"
-                android:text="Button"
+                android:layout_marginStart="204dp"
+                android:layout_marginTop="332dp"
+                android:text="Faction Abilities"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/planetNameEditView" />
 
@@ -145,12 +146,12 @@
                 android:layout_width="61dp"
                 android:layout_height="39dp"
                 android:layout_marginStart="84dp"
-                android:layout_marginLeft="84dp"
                 android:layout_marginTop="12dp"
                 android:ems="10"
                 android:inputType="number"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/planetResourcesTextView" />
+                app:layout_constraintTop_toBottomOf="@+id/planetResourcesTextView"
+                android:text="@string/number" />
 
             <TextView
                 android:id="@+id/influenceTextView"
@@ -168,16 +169,15 @@
                 android:layout_width="62dp"
                 android:layout_height="45dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="8dp"
-                android:layout_marginRight="8dp"
                 android:ems="10"
                 android:inputType="number"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.515"
                 app:layout_constraintStart_toEndOf="@+id/planetResourcesEditText"
-                app:layout_constraintTop_toBottomOf="@+id/influenceTextView" />
+                app:layout_constraintTop_toBottomOf="@+id/influenceTextView"
+                android:text="@string/number" />
 
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
