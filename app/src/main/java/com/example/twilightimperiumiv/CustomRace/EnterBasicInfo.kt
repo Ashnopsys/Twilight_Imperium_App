@@ -19,10 +19,11 @@ class EnterBasicInfo : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_one)
-        val list : ArrayList<BasicInfo> = arrayListOf()
-        list.add(createBasicInfo())
 
         saveButFragOne.setOnClickListener {
+            val list : ArrayList<BasicInfo> = arrayListOf()
+            list.add(createBasicInfo())
+
             var intent = Intent(this, EnterFactionAbilities::class.java).apply {
                 putExtra("BASIC_INFO", Gson().toJson(list))
             }

@@ -18,17 +18,31 @@ class EnterFactionAbilities : AppCompatActivity() {
 
         var from = intent.extras.getString("BASIC_INFO")
         Log.e("HERE", "MADE IT")
-        if (from.length > 0) {
+        if (from.length >= 0) {
             Log.e("HERE", "MADE IT TWICE")
 
             val parser = JsonParser()
-            val array = parser.parse(from).getAsJsonArray()
-            for (i in array) {
-                //Grab array from Json array
-                var basicInfo : ArrayList<BasicInfo> = Gson().fromJson<ArrayList<BasicInfo>>(array, object : TypeToken<List<BasicInfo>>() {}.type)
-                val name = Gson().fromJson(basicInfo, BasicInfo.class)
-                Log.e("Message", name)
-            }
+        //    val array = parser.parse(from).asString
+            Log.e("Message", "AAAAAAAAAAAAAAAAAAH")
+
+            val basicInfo : ArrayList<BasicInfo> = Gson().fromJson(from, object : TypeToken<List<BasicInfo>>(){}.type)
+            Log.e("Message", basicInfo[0].toString())
+
+            Log.e("Message", basicInfo[0].name)
+
+//            for (i in array) {
+//                Log.e("Message", array.size().toString())
+//
+//                //Grab array from Json array
+//                var basicInfo : ArrayList<BasicInfo> = Gson().fromJson<ArrayList<BasicInfo>>(array, object : TypeToken<List<BasicInfo>>() {}.type)
+//                for (i in basicInfo) {
+//                    val test : BasicInfo = i
+//                    Log.e("Message", i.name)
+//
+//                }
+////                    val name = Gson().fromJson(basicInfo, BasicInfo.class)
+////                Log.e("Message", name)
+//            }
         }
 
     }
