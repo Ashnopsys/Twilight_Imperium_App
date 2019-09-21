@@ -8,7 +8,6 @@ import com.example.twilightimperiumiv.R
 import com.google.gson.Gson
 import com.google.gson.JsonParser
 import com.google.gson.reflect.TypeToken
-import java.util.ArrayList
 
 class EnterFactionAbilities : AppCompatActivity() {
 
@@ -25,24 +24,11 @@ class EnterFactionAbilities : AppCompatActivity() {
         //    val array = parser.parse(from).asString
             Log.e("Message", "AAAAAAAAAAAAAAAAAAH")
 
-            val basicInfo : ArrayList<BasicInfo> = Gson().fromJson(from, object : TypeToken<List<BasicInfo>>(){}.type)
-            Log.e("Message", basicInfo[0].toString())
+            val basicInfo : BasicInfo = Gson().fromJson(from, object : TypeToken<BasicInfo>(){}.type)
+            Log.e("Message", basicInfo.toString())
 
-            Log.e("Message", basicInfo[0].name)
+            Log.e("Message", basicInfo.name)
 
-//            for (i in array) {
-//                Log.e("Message", array.size().toString())
-//
-//                //Grab array from Json array
-//                var basicInfo : ArrayList<BasicInfo> = Gson().fromJson<ArrayList<BasicInfo>>(array, object : TypeToken<List<BasicInfo>>() {}.type)
-//                for (i in basicInfo) {
-//                    val test : BasicInfo = i
-//                    Log.e("Message", i.name)
-//
-//                }
-////                    val name = Gson().fromJson(basicInfo, BasicInfo.class)
-////                Log.e("Message", name)
-//            }
         }
 
     }
