@@ -52,6 +52,7 @@ class EnterFactionAbilities : AppCompatActivity() {
                 removeButton.setOnClickListener() {
                     val toast = Toast.makeText(applicationContext, factionAbilitiesLinearLayout.abilityNameEditText.id.toString(), Toast.LENGTH_LONG)
                     toast.show()
+                    //doesn't work yet. Need to implement for each button
                 }
 
                 } else {
