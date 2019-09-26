@@ -13,13 +13,12 @@ class EnterBasicInfo : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_one)
+        val customRace = CustomRace()
 
         saveButFragOne.setOnClickListener {
-            val list : ArrayList<BasicInfo> = arrayListOf()
-            list.add(createBasicInfo())
-
+            customRace.setBasicInfo(createBasicInfo())
             var intent = Intent(this, EnterFactionAbilities::class.java).apply {
-                putExtra("BASIC_INFO", Gson().toJson(createBasicInfo()))
+                putExtra("CUSTOM_RACE", Gson().toJson(customRace))
             }
             startActivity(intent)
         }

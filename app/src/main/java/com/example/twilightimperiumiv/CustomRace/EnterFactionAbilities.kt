@@ -23,11 +23,11 @@ class EnterFactionAbilities : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_two)
 
-        var from = intent.extras.getString("BASIC_INFO")
+        var from = intent.extras.getString("CUSTOM_RACE")
         Log.e("HERE", "MADE IT")
         if (from.length >= 0) {
-            val basicInfo : BasicInfo = Gson().fromJson(from, object : TypeToken<BasicInfo>(){}.type)
-            Log.e("Message", basicInfo.name)
+            val customRace : CustomRace = Gson().fromJson(from, object : TypeToken<CustomRace>(){}.type)
+            Log.e("Message", customRace.name)
         }
 
         var increment : Int = 0
