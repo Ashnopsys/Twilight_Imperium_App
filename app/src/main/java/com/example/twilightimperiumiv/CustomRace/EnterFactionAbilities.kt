@@ -28,26 +28,28 @@ class EnterFactionAbilities : AppCompatActivity() {
         if (from.length >= 0) {
             val customRace : CustomRace = Gson().fromJson(from, object : TypeToken<CustomRace>(){}.type)
             Log.e("Message", customRace.name)
+            //CustomRace should have a basic ability in it
         }
 
-        var increment : Int = 0
-        val abilities = arrayListOf<FactionAbility>()
-        val factionAbilityList = arrayListOf<FactionAbility>()
+        var increment = 0
+        val factionAbilityNameList = arrayListOf<String>()
+        val factionAbilityDescriptionList = arrayListOf<String>()
+
         addFactionAbility.setOnClickListener() {
             val factionAbilityLimit = 3
             if(increment < factionAbilityLimit) {
                 val view = createFactionAbilityBox(factionAbilitiesLinearLayout)
+                view.id = increment
                 factionAbilitiesLinearLayout.addView(view)
 
                 val abilityName = factionAbilitiesLinearLayout.abilityNameEditText.toString()
-
-
                 val abilityDescription = factionAbilitiesLinearLayout.abilityDescriptionEditText.toString()
                 //need to add id to each ability. This needs changed as it will save blank fields
                 increment = increment.inc()
+                factionAbilitiesLinearLayout.abilityNumberTextView.setText(increment.toString())
 
-                factionAbilityList.add(FactionAbility(abilityName, abilityDescription, view))
-                //pass in view too so that it can be removed with delete button
+                factionAbilityNameList.add(abilityName)
+                factionAbilityDescriptionList.add(abilityDescription)
 
                 removeButton.setOnClickListener() {
                     val toast = Toast.makeText(applicationContext, factionAbilitiesLinearLayout.abilityNameEditText.id.toString(), Toast.LENGTH_LONG)
@@ -65,4 +67,5 @@ class EnterFactionAbilities : AppCompatActivity() {
         val inflater:LayoutInflater = LayoutInflater.from(applicationContext)
         return inflater.inflate(R.layout.faction_ability, container, false)
     }
+
 }
