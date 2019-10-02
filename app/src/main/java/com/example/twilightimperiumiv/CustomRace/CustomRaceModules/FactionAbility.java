@@ -12,7 +12,10 @@ public class FactionAbility {
         this.abilityDescription = abilityDescription;
         this.view = view;
     }
-
+    public FactionAbility(String abilityName, String abilityDescription) {
+        this.abilityName = abilityName;
+        this.abilityDescription = abilityDescription;
+    }
     public String getAbilityName() {
         return abilityName;
     }

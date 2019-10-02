@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.example.twilightimperiumiv.CustomRace.CustomRaceModules.FactionAbility
 import com.example.twilightimperiumiv.R
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -46,14 +47,10 @@ class EnterFactionAbilities : AppCompatActivity() {
                 increment = increment.inc()
 //                factionAbilitiesLinearLayout.abilityNumberTextView.setText(increment.toString())
 
-                factionAbilityNameList.add(abilityName)
-                factionAbilityDescriptionList.add(abilityDescription)
 
                 val removeButton = Button(this)
                 removeButton.text = "Remove Ability"
                 removeButton.setOnClickListener() {
-                    //use removeView() in here, look for button pressed parentView?
-                    //removeFactionAbility(view.id, view)
                     factionAbilitiesLinearLayout.removeView(view)
                     factionAbilitiesLinearLayout.removeView(removeButton)
 
@@ -71,6 +68,21 @@ class EnterFactionAbilities : AppCompatActivity() {
             }
 
         }
+
+        shipsButton.setOnClickListener() {
+            makeFactionAbilities(factionAbilityNameList, factionAbilityDescriptionList)
+        }
+    }
+
+    fun makeFactionAbilities(names : List<EditText>, descriptions : List<EditText>) : List<FactionAbility> {
+        val listOfFactionAbilities = arrayListOf<FactionAbility>()
+        if(names.size != 0) {
+            for (i in names.indices) {
+                val factionAbility = FactionAbility(names[i].text.toString(), descriptions[i].text.toString())
+                listOfFactionAbilities.add(factionAbility)
+            }
+        }
+        return listOfFactionAbilities
     }
 
     private fun removeFactionAbility(id: Int, view: View) {
