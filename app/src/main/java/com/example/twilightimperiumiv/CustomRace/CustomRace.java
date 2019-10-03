@@ -12,7 +12,7 @@ public class CustomRace extends Race {
 
     private String customRaceName;
     private BasicInfo basicInfo;
-    private FactionAbility factionAbility;
+    private ArrayList<FactionAbility> factionAbility;
     private ArrayList<Ship> shipSheet;
 
     public CustomRace (String customRaceName) {
@@ -21,7 +21,7 @@ public class CustomRace extends Race {
 
     public CustomRace() {}
 
-    public CustomRace (BasicInfo basicInfo, FactionAbility factionAbility, ArrayList<Ship> shipSheet) {
+    public CustomRace (BasicInfo basicInfo, ArrayList<FactionAbility> factionAbility, ArrayList<Ship> shipSheet) {
         this.basicInfo = basicInfo;
         this.factionAbility = factionAbility;
         this.shipSheet = shipSheet;
@@ -32,7 +32,7 @@ public class CustomRace extends Race {
         this.customRaceName = basicInfo.getName();
     }
 
-    public void setFactionAbility(FactionAbility factionAbility) {
+    public void setFactionAbility(ArrayList<FactionAbility> factionAbility) {
         this.factionAbility = factionAbility;
     }
 

@@ -22,14 +22,6 @@ class EnterFactionAbilities : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_two)
 
-        var from = intent.extras.getString("CUSTOM_RACE")
-        Log.e("HERE", "MADE IT")
-        if (from.length >= 0) {
-            val customRace : CustomRace = Gson().fromJson(from, object : TypeToken<CustomRace>(){}.type)
-            Log.e("Message", customRace.name)
-            //CustomRace should have a basic ability in it
-        }
-
         var increment = 0
         val factionAbilityNameList = arrayListOf<EditText>()
         val factionAbilityDescriptionList = arrayListOf<EditText>()
@@ -67,11 +59,16 @@ class EnterFactionAbilities : AppCompatActivity() {
             }
         }
         shipsButton.setOnClickListener() {
-            makeFactionAbilities(factionAbilityNameList, factionAbilityDescriptionList)
+
+            var from = intent.extras.getString("CUSTOM_RACE")
+            if (from.length >= 0) {
+                val customRace : CustomRace = Gson().fromJson(from, object : TypeToken<CustomRace>(){}.type)
+                customRace.setFactionAbility(makeFactionAbilities(factionAbilityNameList, factionAbilityDescriptionList))
+            }
         }
     }
 
-    private fun makeFactionAbilities(names : List<EditText>, descriptions : List<EditText>) : List<FactionAbility> {
+    private fun makeFactionAbilities(names : List<EditText>, descriptions : List<EditText>) : ArrayList<FactionAbility> {
         val listOfFactionAbilities = arrayListOf<FactionAbility>()
         if(names.size != 0) {
             for (i in names.indices) {
