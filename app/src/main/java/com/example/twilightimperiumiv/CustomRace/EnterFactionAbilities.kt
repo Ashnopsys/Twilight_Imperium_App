@@ -47,33 +47,25 @@ class EnterFactionAbilities : AppCompatActivity() {
                 factionAbilityNameList.add(abilityName)
                 factionAbilityDescriptionList.add((abilityDescription))
 
-                //need to add id to each ability. This needs changed as it will save blank fields
                 increment = increment.inc()
-//                factionAbilitiesLinearLayout.abilityNumberTextView.setText(increment.toString())
-
 
                 val removeButton = Button(this)
                 removeButton.text = "Remove Ability"
                 removeButton.setOnClickListener() {
                     factionAbilitiesLinearLayout.removeView(view)
                     factionAbilitiesLinearLayout.removeView(removeButton)
-
+                    //TODO remove the edittexts from the lists too
 
                     increment = increment - 1
                     val toast = Toast.makeText(applicationContext, view.id.toString(), Toast.LENGTH_LONG)
                     toast.show()
-                    //doesn't work yet. Need to implement for each button
                 }
                 factionAbilitiesLinearLayout.addView(removeButton)
-
-
             } else {
                 val toast = Toast.makeText(applicationContext, "You already have 3 abilities!", Toast.LENGTH_LONG)
                 toast.show()
             }
-
         }
-
         shipsButton.setOnClickListener() {
             makeFactionAbilities(factionAbilityNameList, factionAbilityDescriptionList)
         }
