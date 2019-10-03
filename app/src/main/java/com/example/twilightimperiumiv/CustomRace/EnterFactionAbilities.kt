@@ -43,6 +43,10 @@ class EnterFactionAbilities : AppCompatActivity() {
 
                 val abilityName = factionAbilitiesLinearLayout.abilityNameEditText
                 val abilityDescription = factionAbilitiesLinearLayout.abilityDescriptionEditText
+
+                factionAbilityNameList.add(abilityName)
+                factionAbilityDescriptionList.add((abilityDescription))
+
                 //need to add id to each ability. This needs changed as it will save blank fields
                 increment = increment.inc()
 //                factionAbilitiesLinearLayout.abilityNumberTextView.setText(increment.toString())
@@ -53,6 +57,7 @@ class EnterFactionAbilities : AppCompatActivity() {
                 removeButton.setOnClickListener() {
                     factionAbilitiesLinearLayout.removeView(view)
                     factionAbilitiesLinearLayout.removeView(removeButton)
+
 
                     increment = increment - 1
                     val toast = Toast.makeText(applicationContext, view.id.toString(), Toast.LENGTH_LONG)
@@ -74,7 +79,7 @@ class EnterFactionAbilities : AppCompatActivity() {
         }
     }
 
-    fun makeFactionAbilities(names : List<EditText>, descriptions : List<EditText>) : List<FactionAbility> {
+    private fun makeFactionAbilities(names : List<EditText>, descriptions : List<EditText>) : List<FactionAbility> {
         val listOfFactionAbilities = arrayListOf<FactionAbility>()
         if(names.size != 0) {
             for (i in names.indices) {
