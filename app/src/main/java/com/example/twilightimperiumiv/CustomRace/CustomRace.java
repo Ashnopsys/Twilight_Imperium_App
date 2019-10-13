@@ -30,6 +30,7 @@ public class CustomRace extends Race {
     public void setBasicInfo(BasicInfo basicInfo) {
         this.basicInfo = basicInfo;
         this.customRaceName = basicInfo.getName();
+        //co
     }
 
     public void setFactionAbility(ArrayList<FactionAbility> factionAbility) {
