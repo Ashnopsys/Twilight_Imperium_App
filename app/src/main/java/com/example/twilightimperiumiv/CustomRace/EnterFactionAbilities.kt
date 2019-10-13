@@ -1,5 +1,6 @@
 package com.example.twilightimperiumiv.CustomRace
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -64,6 +65,9 @@ class EnterFactionAbilities : AppCompatActivity() {
             if (from.length >= 0) {
                 val customRace : CustomRace = Gson().fromJson(from, object : TypeToken<CustomRace>(){}.type)
                 customRace.setFactionAbility(makeFactionAbilities(factionAbilityNameList, factionAbilityDescriptionList))
+                val intent = Intent(this, EnterShips::class.java).apply {
+                    //TODO putExtra stuff in here
+                }
             }
         }
     }
