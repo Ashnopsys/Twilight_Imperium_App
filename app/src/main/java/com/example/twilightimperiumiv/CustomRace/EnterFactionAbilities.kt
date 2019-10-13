@@ -43,7 +43,7 @@ class EnterFactionAbilities : AppCompatActivity() {
                 increment = increment.inc()
 
                 val removeButton = Button(this)
-                removeButton.text = "Remove Ability"
+                removeButton.text = R.string.remove_ability.toString()
                 removeButton.setOnClickListener() {
                     factionAbilitiesLinearLayout.removeView(view)
                     factionAbilitiesLinearLayout.removeView(removeButton)
@@ -61,12 +61,12 @@ class EnterFactionAbilities : AppCompatActivity() {
         }
         shipsButton.setOnClickListener() {
 
-            var from = intent.extras.getString("CUSTOM_RACE")
+            val from = intent.extras.getString("CUSTOM_RACE")
             if (from.length >= 0) {
                 val customRace : CustomRace = Gson().fromJson(from, object : TypeToken<CustomRace>(){}.type)
                 customRace.setFactionAbility(makeFactionAbilities(factionAbilityNameList, factionAbilityDescriptionList))
                 val intent = Intent(this, EnterShips::class.java).apply {
-                    //TODO putExtra stuff in here
+                    intent.putExtra("CUSTOM_RACE", Gson().toJson(customRace))
                 }
             }
         }

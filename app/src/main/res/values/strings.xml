@@ -101,5 +101,8 @@
     <string name="tab_text_2">Tab 2</string>
     <string name="title_activity_tabbed__custom__race">Tabbed_Custom_Race</string>
     <string name="number">0</string>
+    <string name="remove_ability">Remove Ability</string>
+
+
 
 </resources>
