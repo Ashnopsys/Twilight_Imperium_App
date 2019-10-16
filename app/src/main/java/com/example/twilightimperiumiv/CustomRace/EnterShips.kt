@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.fragment_one.*
 class EnterShips  : AppCompatActivity() {
 override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    setContentView(R.layout.fragment_one)
+    setContentView(R.layout.fragment_three)
     val customRace = CustomRace()
 
 

@@ -62,12 +62,15 @@ class EnterFactionAbilities : AppCompatActivity() {
         shipsButton.setOnClickListener() {
 
             val from = intent.extras.getString("CUSTOM_RACE")
-            if (from.length >= 0) {
                 val customRace : CustomRace = Gson().fromJson(from, object : TypeToken<CustomRace>(){}.type)
+
+                if (from.length >= 0) {
                 customRace.setFactionAbility(makeFactionAbilities(factionAbilityNameList, factionAbilityDescriptionList))
                 val intent = Intent(this, EnterShips::class.java).apply {
-                    intent.putExtra("CUSTOM_RACE", Gson().toJson(customRace))
+                    putExtra("CUSTOM_RACE", Gson().toJson(customRace))
                 }
+                startActivity(intent)
+
             }
         }
     }
