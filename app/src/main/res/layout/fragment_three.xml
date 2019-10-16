@@ -29,42 +29,59 @@
 
                 <ImageButton
                     android:id="@+id/imageButton"
-                    android:layout_width="450px"
+                    android:layout_width="650px"
                     android:layout_height="450px"
                     android:layout_weight="1"
-                    android:background="@drawable/creuss"
+                    android:background="@drawable/carrier"
                     tools:srcCompat="@android:drawable/alert_dark_frame" />
 
                 <ImageButton
                     android:id="@+id/imageButton2"
-                    android:layout_width="450px"
+                    android:layout_width="650px"
                     android:layout_height="450px"
-                    android:background="@drawable/hacan"
-                    tools:srcCompat="@tools:sample/avatars" />
+                    android:background="@drawable/cruiser"
+                    tools:srcCompat="@drawable/cruiser" />
 
                 <ImageButton
                     android:id="@+id/imageButton3"
-                    android:layout_width="450px"
+                    android:layout_width="650px"
                     android:layout_height="450px"
                     android:layout_weight="1"
-                    android:background="@drawable/l1z1x"
+                    android:background="@drawable/destroyer"
                     tools:srcCompat="@tools:sample/avatars" />
 
                 <ImageButton
                     android:id="@+id/imageButton4"
-                    android:layout_width="450px"
+                    android:layout_width="650px"
                     android:layout_height="450px"
                     android:layout_weight="1"
-                    android:background="@drawable/sol"
+                    android:background="@drawable/dreadnought"
                     tools:srcCompat="@tools:sample/avatars" />
 
                 <ImageButton
                     android:id="@+id/imageButton5"
-                    android:layout_width="450px"
+                    android:layout_width="650px"
                     android:layout_height="450px"
                     android:layout_weight="1"
-                    android:background="@drawable/saar"
+                    android:background="@drawable/fighter"
                     tools:srcCompat="@tools:sample/avatars" />
+
+                <ImageButton
+                    android:id="@+id/imageButton8"
+                    android:layout_width="650px"
+                    android:layout_height="450px"
+                    android:layout_weight="1"
+                    android:background="@drawable/pds"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <ImageButton
+                    android:id="@+id/imageButton9"
+                    android:layout_width="650px"
+                    android:layout_height="450px"
+                    android:layout_weight="1"
+                    android:background="@drawable/warsun"
+                    tools:srcCompat="@tools:sample/avatars" />
+
             </LinearLayout>
         </HorizontalScrollView>
 
@@ -99,17 +116,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.194" />
-
-        <RadioButton
-            android:id="@+id/radioButton"
-            android:layout_width="138dp"
-            android:layout_height="132dp"
-            android:layout_marginStart="240dp"
-            android:layout_marginTop="84dp"
-            android:button="@drawable/arborec"
-            android:text="RadioButton"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
 
     </android.support.constraint.ConstraintLayout>
 
