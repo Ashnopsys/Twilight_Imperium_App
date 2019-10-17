@@ -19,7 +19,7 @@ override fun onCreate(savedInstanceState: Bundle?) {
 
     val from = intent.extras.getString("CUSTOM_RACE")
 
-
+    //TODO need to figure out how to apply clicked method to each of the buttons without spaghetti code
 }
     fun createFleet(): ArrayList<Ship> {
         /*
