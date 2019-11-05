@@ -1,30 +1,24 @@
 package com.example.twilightimperiumiv.CustomRace
 
-import android.content.Intent
 import android.os.Bundle
-import android.support.v4.content.ContextCompat.startActivity
 import android.support.v7.app.AppCompatActivity
 import android.view.LayoutInflater
 import android.view.View
-import android.widget.TextView
 import com.example.twilightimperiumiv.CustomRace.Ships.Ship
 import com.example.twilightimperiumiv.CustomRace.Ships.ShipType
-import com.example.twilightimperiumiv.R
-import com.google.gson.Gson
-import kotlinx.android.synthetic.main.fragment_one.*
 import kotlinx.android.synthetic.main.fragment_three.*
-
+import com.example.twilightimperiumiv.Fragments.FX
 
 
 class EnterShips  : AppCompatActivity() {
     lateinit var txt_help_gest : View
 override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
-    setContentView(R.layout.fragment_three)
+    setContentView(com.example.twilightimperiumiv.R.layout.fragment_three)
     val customRace = CustomRace()
     val inflater: LayoutInflater = LayoutInflater.from(applicationContext)
-    txt_help_gest = inflater.inflate(R.layout.create_cruiser, ships_layout, false)
-    ships_layout.addView(txt_help_gest)
+    txt_help_gest = inflater.inflate(com.example.twilightimperiumiv.R.layout.create_cruiser, carrier_layout, false)
+    carrier_layout.addView(txt_help_gest)
 // hide until its title is clicked
     txt_help_gest.visibility = View.GONE
 
@@ -47,11 +41,15 @@ override fun onCreate(savedInstanceState: Bundle?) {
         return fleet
     }
 
-    fun toggle_contents(view : View) {
-
-        txt_help_gest.visibility = if (txt_help_gest.isShown)
-            View.GONE
-        else
-            View.VISIBLE
+    fun toggle_contents(v: View) {
+        if (txt_help_gest.isShown) {
+            FX.slide_up(this, txt_help_gest)
+            //TODO fix slide up
+            txt_help_gest.visibility = View.GONE
+        } else {
+            txt_help_gest.visibility = View.VISIBLE
+            FX.slide_down(this, txt_help_gest)
+        }
     }
 }
+

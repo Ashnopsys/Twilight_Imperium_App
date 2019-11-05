@@ -23,4 +23,14 @@ public class FX {
             }
         }
     }
+    public static void slide_up(Context ctx, View v){
+        Animation a = AnimationUtils.loadAnimation(ctx, R.anim.slide_up);
+        if(a != null){
+            a.reset();
+            if(v != null){
+                v.clearAnimation();
+                v.startAnimation(a);
+            }
+        }
+    }
 }
