@@ -4,18 +4,29 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v4.content.ContextCompat.startActivity
 import android.support.v7.app.AppCompatActivity
+import android.view.LayoutInflater
+import android.view.View
+import android.widget.TextView
 import com.example.twilightimperiumiv.CustomRace.Ships.Ship
 import com.example.twilightimperiumiv.CustomRace.Ships.ShipType
 import com.example.twilightimperiumiv.R
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.fragment_one.*
+import kotlinx.android.synthetic.main.fragment_three.*
+
+
 
 class EnterShips  : AppCompatActivity() {
+    lateinit var txt_help_gest : View
 override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.fragment_three)
     val customRace = CustomRace()
-
+    val inflater: LayoutInflater = LayoutInflater.from(applicationContext)
+    txt_help_gest = inflater.inflate(R.layout.create_cruiser, ships_layout, false)
+    ships_layout.addView(txt_help_gest)
+// hide until its title is clicked
+    txt_help_gest.visibility = View.GONE
 
     val from = intent.extras.getString("CUSTOM_RACE")
 
@@ -34,5 +45,13 @@ override fun onCreate(savedInstanceState: Bundle?) {
             fleet.add(newShip)
         }
         return fleet
+    }
+
+    fun toggle_contents(view : View) {
+
+        txt_help_gest.visibility = if (txt_help_gest.isShown)
+            View.GONE
+        else
+            View.VISIBLE
     }
 }
