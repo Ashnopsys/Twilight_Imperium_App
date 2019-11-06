@@ -18,20 +18,6 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
-                android:id="@+id/cruiser_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/cruiser_text"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Cruiser" />
-            </LinearLayout>
-
-            <LinearLayout
                 android:id="@+id/carrier_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -44,9 +30,25 @@
                     android:layout_width="131dp"
                     android:layout_height="wrap_content"
                     android:clickable="true"
-                    android:onClick="toggle_contents"
+                    android:onClick="toggle_contents_carrier"
                     android:text="Carrier" />
 
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/cruiser_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/cruiser_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:onClick="toggle_contents_cruiser"
+                    android:text="Cruiser" />
             </LinearLayout>
 
             <LinearLayout
@@ -60,6 +62,8 @@
                     android:id="@+id/destroyer_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:onClick="toggle_contents_destroyer"
                     android:text="Destroyer" />
             </LinearLayout>
 
@@ -74,6 +78,8 @@
                     android:id="@+id/dreadnought_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:onClick="toggle_contents_dreadnought"
                     android:text="Dreadnought" />
             </LinearLayout>
 
@@ -88,6 +94,9 @@
                     android:id="@+id/fighter_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:onClick="toggle_contents_fighter"
+
                     android:text="Fighter" />
             </LinearLayout>
 
@@ -102,7 +111,26 @@
                     android:id="@+id/infantry_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:onClick="toggle_contents_infantry"
+
                     android:text="Infantry" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/pds_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/pds_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:onClick="toggle_contents_pds"
+
+                    android:text="PDS" />
             </LinearLayout>
 
             <LinearLayout
@@ -116,13 +144,11 @@
                     android:id="@+id/warsun_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:onClick="toggle_contents_warsun"
+
                     android:text="Warsun" />
             </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"></LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
