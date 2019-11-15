@@ -1,5 +1,7 @@
 package com.example.twilightimperiumiv.CustomRace
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.LayoutInflater
@@ -9,8 +11,20 @@ import com.example.twilightimperiumiv.CustomRace.Ships.Ship
 import com.example.twilightimperiumiv.CustomRace.Ships.ShipType
 import kotlinx.android.synthetic.main.fragment_three.*
 import com.example.twilightimperiumiv.Fragments.FX
+import com.example.twilightimperiumiv.MainActivity
 import com.example.twilightimperiumiv.R
-import kotlinx.android.synthetic.main.create_destroyer.view.*
+import com.example.twilightimperiumiv.RaceList
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import kotlinx.android.synthetic.main.create_carrier.*
+import kotlinx.android.synthetic.main.create_cruiser.*
+import kotlinx.android.synthetic.main.create_destroyer.*
+import kotlinx.android.synthetic.main.create_dreadnought.*
+import kotlinx.android.synthetic.main.create_fighter.*
+import kotlinx.android.synthetic.main.create_infantry.*
+import kotlinx.android.synthetic.main.create_pds.*
+import kotlinx.android.synthetic.main.create_warsun.*
+import kotlinx.android.synthetic.main.fragment_two.*
 
 
 class EnterShips : AppCompatActivity() {
@@ -55,8 +69,37 @@ class EnterShips : AppCompatActivity() {
 
 
         makeAllViewsGone(ship_views)
+        var racesNames = java.util.ArrayList<CustomRace>()
 
-        val from = intent.extras.getString("CUSTOM_RACE")
+        saveRaceButton.setOnClickListener() {
+
+            val from = intent.extras.getString("CUSTOM_RACE")
+            val customRace : CustomRace = Gson().fromJson(from, object : TypeToken<CustomRace>(){}.type)
+
+            if (from.length >= 0) {
+                customRace.setShipSheet(createFleet())
+
+                racesNames = RaceList.getFromPrefs(this@EnterShips)
+
+                racesNames.add(customRace)
+
+                val gson = Gson()
+                val prefs = getSharedPreferences("prefs", Context.MODE_PRIVATE)
+                val racesHistoryListToString = gson.toJson(racesNames)
+
+                val editor = prefs.edit()
+                editor.putString("history", racesHistoryListToString)
+                editor.apply()
+
+
+
+
+                val intent = Intent(this, MainActivity::class.java).apply {
+                }
+                startActivity(intent)
+
+            }
+        }
 
         //TODO need to figure out how to apply clicked method to each of the buttons without spaghetti code
     }
@@ -68,17 +111,26 @@ class EnterShips : AppCompatActivity() {
     }
 
     fun createFleet(): ArrayList<Ship> {
-        /*
-        Create all the ships with default stats. Will create another method to change stats
-        based on selected ship
-         */
-        var DEFAULT_CUSTOM_STATS = false
         var fleet: ArrayList<Ship> = ArrayList()
+        //(ShipType shiptype, int cost, int combat, int move, int capacity)
 
-        for (ship in ShipType.values()) {
-            var newShip = Ship(ship, DEFAULT_CUSTOM_STATS, fleet)
-            fleet.add(newShip)
-        }
+        val carrier = Ship(ShipType.CARRIER, carrier_cost.toString().toInt(), carrier_combat.toString().toInt(), carrier_move.toString().toInt(), carrier_cap.toString().toInt())
+        val cruiser = Ship(ShipType.CRUISER, cruiser_cost.toString().toInt(), cruiser_combat.toString().toInt(), cruiser_move.toString().toInt(), cruiser_cap.toString().toInt())
+        val destroyer = Ship(ShipType.DESTROYER, destroyer_cost.toString().toInt(), destroyer_combat.toString().toInt(), destroyer_move.toString().toInt(), destroyer_cap.toString().toInt())
+        val dreadnought = Ship(ShipType.DREADNOUGHT, dreadnought_cost.toString().toInt(), dreadnought_combat.toString().toInt(), dreadnought_move.toString().toInt(), dreadnought_cap.toString().toInt())
+        val fighter = Ship(ShipType.FIGHTER, fighter_cost.toString().toInt(), fighter_combat.toString().toInt(), fighter_move.toString().toInt(), fighter_cap.toString().toInt())
+        val infantry = Ship(ShipType.INFANTRY, infantry_cost.toString().toInt(), infantry_combat.toString().toInt(), infantry_move.toString().toInt(), infantry_cap.toString().toInt())
+        val pds = Ship(ShipType.PDS, pds_cost.toString().toInt(), pds_combat.toString().toInt(), pds_move.toString().toInt(), pds_cap.toString().toInt())
+        val warsun = Ship(ShipType.WARSUN, warsun_cost.toString().toInt(), warsun_combat.toString().toInt(), warsun_move.toString().toInt(), warsun_cap.toString().toInt())
+
+        fleet.add(carrier)
+        fleet.add(cruiser)
+        fleet.add(destroyer)
+        fleet.add(dreadnought)
+        fleet.add(fighter)
+        fleet.add(infantry)
+        fleet.add(pds)
+        fleet.add(warsun)
         return fleet
     }
 

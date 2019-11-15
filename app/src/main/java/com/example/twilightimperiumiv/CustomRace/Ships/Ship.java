@@ -13,6 +13,13 @@ public class Ship {
     private boolean isUpgradable = false;
     private boolean isCustomShip = false;
 
+    public Ship(ShipType shiptype, int cost, int combat, int move, int capacity) {
+        this.cost = cost;
+        this.combat = combat;
+        this.move = move;
+        this.capacity = capacity;
+    }
+
     public Ship(ShipType shipType, boolean isCustomShip, ArrayList<Ship> customShips) {
         this.shipType = shipType;
         this.isCustomShip = isCustomShip;
