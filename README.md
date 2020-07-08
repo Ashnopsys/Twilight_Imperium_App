@@ -1,4 +1,4 @@
-# Twilight_Imperium_App
+# Twilight Imperium 4th App
 Application to help in the setup, understanding and adding new factions to the game. Currently only aim for local use rather than any online functionality.
 
 # Current Features
