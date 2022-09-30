@@ -1,4 +1,9 @@
 # Starter pipeline
+- task: CodeDxUploadFilse@0
+  inputs:
+    codeDxUrl: 'http://localhost/codedx/projects/'
+    projectId: 'TI4_App_Test'
+    apiKey: 'secret-token:NAqKMkSUfKGH0f0Jrn1qdJkSnrzqt828mVyHqHhr'
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
